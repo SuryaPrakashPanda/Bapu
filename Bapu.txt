@@ -1,0 +1,2 @@
+Hello
+My text file is ready.
