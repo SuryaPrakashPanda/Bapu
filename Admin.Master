@@ -1,0 +1,218 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="RohiniBankBilling.Admin" %>
+
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+   <title></title>
+     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="vendor/morris/morris.css">
+        <!-- Icons -->
+        <link href="resources/icons/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="resources/icons/themify-icons/themify-icons.css" rel="stylesheet">
+        <!--animate css-->
+        <link rel="stylesheet" href="vendor/animate.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="resources/css/main-style.min.css">
+        <link rel="stylesheet" href="resources/css/skins/all-skins.min.css">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link rel="stylesheet" href="resources/css/demo.css">
+    <style>
+        .btn-group-sm > .btn, .btn-sm {
+
+            min-width:25px !important;  
+            height:35px !important;
+        }
+        .skin-yellow .top-menu-header .navbar {
+    background-color: #989269 !important;
+}
+        .skin-yellow .top-menu-header .logo {
+    background-color:#989269 !important;
+    color: #fff;
+    border-bottom: 0 solid transparent;
+}
+        .hr {
+            margin-top: 10px !important;
+            margin-bottom: 10px !important;
+        }
+        .skin-yellow .top-menu-header .navbar {
+            background: linear-gradient(45deg, #7b7ef8, aqua);
+            /*background-color: #989269 !important;*/
+        }
+        .skin-yellow .top-menu-header .logo {
+    background-color: #7b7ef8 !important;
+    color: #fff;
+    border-bottom: 0 solid transparent;
+}
+        .sidebar-menu .treeview-menu > li > a {
+            height: 42px !important;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+  <body class="skin-yellow sidebar-mini">
+    <form id="form1" runat="server">
+    <div class="wrapper">
+                  <header class="top-menu-header">
+               
+                <a href="#" class="logo">
+                   
+                    <span class="logo-mini">Rohini</span>
+              
+                    <span class="logo-lg"><b>ROHINI</b></span>
+                </a>
+               
+                <nav class="navbar navbar-static-top">
+                 
+                    <a class="sidebar-toggle fa-icon" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <div class="navbar-top-menu">
+                        <ul class="nav navbar-nav">
+                            
+                            <li>  		
+                                <a id="fullscreen-page" role="button"><i class="fa fa-arrows-alt"></i></a>
+                            </li>
+                            
+                        
+                          
+                            
+                            <li class="dropdown user user-menu">
+                              
+                                <a href="#" data-toggle="dropdown" aria-expanded="false">
+                                    
+                                    <asp:Label ID="lblname" runat="server" Text="veera"></asp:Label>
+                                </a>
+                                <ul class="dropdown-menu user-menu animated flipInY">
+                                    
+                                    <li><a href="Default.aspx"><i class="ti-power-off"></i> Log Out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                       
+                      
+                    </div>
+                </nav>
+            </header>
+            
+            <aside class="sidebar-left">
+                <section class="sidebar">
+                    
+                   
+                    <ul class="sidebar-menu">
+                        <li class="treeview"><a href="AddNew.aspx"><i class="fa fa-plus-circle"></i><span>Add Information</span></a>
+                        </li>
+                        <li class="treeview"><a href="Bankstatemententry.aspx"><i class="fa fa-university"></i><span>Add BankStatement</span></a>
+                        </li>
+                        
+                        <li class="treeview"><a href="purchesbillentry.aspx"><i class="fa fa-shopping-cart "></i><span>Purchase Bill Entry</span></a>
+                       
+                         <li class="treeview">
+                              <a href="#"><i class="fa fa-file"></i> <span>Reports</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                </span>
+                            </a>
+                               <ul class="treeview-menu">
+                                 
+                                    <li class="treeview">
+                              <a href="#"><i class="fa fa-money"></i> <span>Credit</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                </span>
+                            </a>
+                               <ul class="treeview-menu">
+                                   <li><a href="Daywisecredit.aspx">Day wise</a></li>
+                                   <li><a href="Btwndatescredit.aspx">Date to Date</a></li>
+                                   </ul>
+                              </li>
+                                     <li class="treeview">
+                              <a href="#"><i class="fa fa-cc-mastercard"></i> <span>Debit</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                </span>
+                            </a>
+                               <ul class="treeview-menu">
+                                   <li><a href="Daywisedebit.aspx">Day wise</a></li>
+                                   <li><a href="btwndatedebit.aspx">Date to Date</a></li>
+                                   </ul>
+                              </li>
+                                     <li><a href="SingleeDate.aspx">Day wise Report</a></li>
+                                   <li><a href="Betweendate.aspx">Date to Date Report</a></li>
+                                   <li><a href="PurchaseBillDetails.aspx">Purchase Report</a></li>
+                                   </ul>
+                              </li>
+                        
+
+                    
+                    </ul>
+                  
+                </section>
+            </aside>
+              <div class="content-wrapper" style="min-height: 941px;">
+               
+               
+                <section class="content">
+        
+               
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                    </section>
+                     </div>
+        
+         <%-- <footer class="main-footer">
+                
+                <strong>Copyright &copy; 2018 <a href="#">Brihaspathi</a>.</strong> All rights reserved.
+               
+                <div class="pull-right hidden-xs"></div>
+            </footer>--%>
+     
+ 
+      <script src="vendor/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="vendor/jquery-fullscreen/jquery.fullscreen-min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendor/slimScroll/jquery.slimscroll.min.js"></script>
+        <script src="vendor/fastclick/fastclick.min.js"></script>
+		<script src="vendor/raphael/raphael.min.js"></script>
+        <script src="vendor/morris/morris.min.js"></script>
+        <script src="vendor/chartjs/Chart.min.js"></script>
+        <script src="vendor/sparkline/jquery.sparkline.min.js"></script>
+        <script src="resources/js/app.min.js"></script>
+
+        <script src="resources/js/demo.js"></script>
+        <script src="resources/js/pages/dashboard.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+
+
+        </div>
+       
+        
+  
+
+    <!--script for this page-->
+    
+  
+   <script type="text/javascript">
+       $(function () {
+           //    fancybox
+           jQuery(".fancybox").fancybox();
+       });
+
+  </script>
+  
+  <script>
+      //custom select box
+
+      $(function () {
+          $("select.styled").customSelect();
+      });
+
+  </script>
+          </form>
+</body>
+</html>
+
